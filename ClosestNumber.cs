@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Reflection
 {
     public class ClosestNumber
     {
+        public string Name;
         public ClosestNumber()
         {
             Console.WriteLine("Default Constructor Created");
+        }
+        public ClosestNumber(string name)
+        {
+            Name = name;
+            Console.WriteLine("Parameterized Constructor Created and passed Parameter is " + Name);
         }
         public static void FindNumber()
         {
