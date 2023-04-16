@@ -8,10 +8,6 @@ namespace Reflection
 {
     public class ClosestNumber
     {
-        public ClosestNumber()
-        {
-            Console.WriteLine("Default Constructor Invoke");
-        }
         public static void FindNumber()
         {
             int c1 =0;
