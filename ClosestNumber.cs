@@ -3,12 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Reflection
 {
     public class ClosestNumber
     {
-        
+        public string Name;
+        public ClosestNumber()
+        {
+            Console.WriteLine("Default Constructor Created");
+        }
+        public ClosestNumber(string name)
+        {
+            Name = name;
+            Console.WriteLine("Parameterized Constructor Created and passed Parameter is " + Name);
+        }
         public static void FindNumber()
         {
             int c1 =0;
@@ -30,7 +40,7 @@ namespace Reflection
                 if (FindEvenDigitNumber(closenumber))
                 {
                      c1 = closenumber;
-                    Console.WriteLine("The Closest Even Digit Number of the given input is " + c1);
+                    Console.WriteLine("Below Closest Even Digit Number of the given input is " + c1);
                      break;
                 }
             }
@@ -42,16 +52,14 @@ namespace Reflection
                 {
                      c2 = closenumber;
 
-                    Console.WriteLine("The Closest Even Digit Number of the given input is " + c2);
+                    Console.WriteLine("Above Closest Even Digit Number of the given input is " + c2);
                    
                     break;
                 }
             }
             var val1 = Math.Abs(c1 - N);
             var val2 = Math.Abs(c2 - N);
-            Console.WriteLine("The closest Even digit Number of given input is" +(val1 == val2 ? 0 : (val1 < val2 ? c1 : c2)));
-
-
+            Console.WriteLine("The closest Even digit Number of given input is" + (val1 < val2 ? c1 : c2));
         }
 
         private static bool FindEvenDigitNumber(int number)
